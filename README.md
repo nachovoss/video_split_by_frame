@@ -10,10 +10,6 @@
 ### ARGS:
     - usage: split_video.py [-h] -vp VIDEO_PATH [-bn BASE_NAME] [-sp SAVE_PATH] [-nf NUMBER_OF_FRAMES] [-f IMAGE_FORMAT]
                       [-s SOURCE] [-ixs [IMGS_X_SECOND [IMGS_X_SECOND ...]]]
-
-Split video into frames
-
-optional arguments:
     - -h, --help            show this help message and exit
     - -vp VIDEO_PATH, --video_path VIDEO_PATH
                         <Required> Path to the video file
