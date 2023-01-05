@@ -5,7 +5,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Split video into frames')
 
-parser.add_argument('-vp', '--video_path',  type=str, help='<Required> Path to the video file', required=True)
+parser.add_argument('-vp', '--video_path',  type=str, help=' <Required> Path to the video file', required=True)
 parser.add_argument('-bn', '--base_name', default="", type=str, help='Base name of the frames (e.g. frame_')
 parser.add_argument('-sp', '--save_path', default="", type=str, help='Path to the save frames')
 parser.add_argument('-nf', '--number_of_frames', default=300, type=int, help='Max amount of frames to be extracted from webcam')
@@ -39,17 +39,20 @@ if cap.isOpened():
     for i in range(total_number_of_frames):
         ret, video = cap.read()
         frame_index += 1
+        
         fps_loop = 1 if fps_loop == fps else fps_loop + 1
         if ret and str(fps_loop) in args.imgs_x_second:
             name = args.base_name + str(frame_index) + args.image_format
             cv2.imwrite(destination_path + name, video)
-            cv2.imshow(name, video)
+            cv2.imshow(args.base_name, video)
             
             # Press enter to quit"
             if cv2.waitKey(10) == 13:
                 break
-            if frame_index + 1  == int(cap.get(cv2.CAP_PROP_FRAME_COUNT)) * -1:
-                break
+            
+        
+        if ret is False:
+            break
 
 cap.release()
 cv2.destroyAllWindows()
