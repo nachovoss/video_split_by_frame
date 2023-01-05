@@ -5,7 +5,7 @@ import argparse
 
 parser = argparse.ArgumentParser(description='Split video into frames')
 
-parser.add_argument('-vp', '--video_path', default="", type=str, help='Path to the video file')
+parser.add_argument('-vp', '--video_path',  type=str, help='<Required> Path to the video file', required=True)
 parser.add_argument('-bn', '--base_name', default="", type=str, help='Base name of the frames (e.g. frame_')
 parser.add_argument('-sp', '--save_path', default="", type=str, help='Path to the save frames')
 parser.add_argument('-nf', '--number_of_frames', default=300, type=int, help='Max amount of frames to be extracted from webcam')
