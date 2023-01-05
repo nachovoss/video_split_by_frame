@@ -11,7 +11,9 @@ parser.add_argument('-sp', '--save_path', default="", type=str, help='Path to th
 parser.add_argument('-nf', '--number_of_frames', default=300, type=int, help='Max amount of frames to be extracted from webcam')
 parser.add_argument('-f', '--image_format', default=".jpg", type=str, help='output image format (jpg, png, etc.')
 parser.add_argument('-s' , '--source', default="file", type=str, help='source of the video ("file" or "webcam" )')
-parser.add_argument('-ixs', '--imgs_x_second', default=1, nargs='*', type=str, help='frames to be extracted from all frames in one second (e.g. 1 , 7, 28)')
+parser.add_argument('-ixs', '--imgs_x_second', default=1, nargs='*', type=str, help='''frames to be extracted from all frames in one second (e.g. 1 , 7, 28)
+                    if a number below 1 is given it will divide fps of the video by that number 
+                    and get 1 image per that interval (e.g "0.5") if fps is 30 it will get 1 image every 60 frames''')
 args = parser.parse_args()
 
 # from video file:

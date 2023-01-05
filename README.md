@@ -25,3 +25,5 @@
                         source of the video ("file" or "webcam" )
     -ixs [IMGS_X_SECOND [IMGS_X_SECOND ...]], --imgs_x_second [IMGS_X_SECOND [IMGS_X_SECOND ...]]
                         frames to be extracted from all frames in one second (e.g. 1 , 7, 28)
+                        if a number below 1 is given it will divide fps of the video by that number 
+                        and get 1 image per that interval (e.g "0.5") if fps is 30 it will get 1 image every 60 frames
